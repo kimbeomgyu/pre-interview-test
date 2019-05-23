@@ -16,8 +16,7 @@ class App extends Component {
   }
 
   _handleDetecting = () => {
-    this.setState({ plus: 33 });
-    //기존의 코드를 유지하되 값을 변경하였습니다.
+    // 기존의 코드를 유지하였습니다.
   };
 
   _handleShow = val => {
@@ -25,8 +24,8 @@ class App extends Component {
     if (val == "") {
       return null;
     } else {
-      CalcActions.showAction(val);
-      this._handleDetecting();
+      this.setState({ plus: 33 }, () => CalcActions.showAction(val));
+      // setState작업이 비동기로 처리되기에 콜백함수로 받아서 사용하게 변경하였습니다.
     }
   };
 
