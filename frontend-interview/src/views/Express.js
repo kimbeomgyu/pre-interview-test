@@ -30,11 +30,11 @@ const Express = ({ show, handleShow, source, multiply, substract, plus }) => {
 };
 
 Express.propTypes = {
-  source: PropTypes.any.isRequired,
-  multiply: PropTypes.any.isRequired,
+  source: PropTypes.number.isRequired,
+  multiply: PropTypes.number.isRequired,
   substract: PropTypes.number.isRequired,
-  plus: PropTypes.any,
-  show: PropTypes.any,
+  plus: PropTypes.number,
+  show: PropTypes.bool.isRequired,
   handleShow: PropTypes.func
 };
 
